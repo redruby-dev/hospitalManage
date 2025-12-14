@@ -1,7 +1,7 @@
 CREATE DATABASE hospital_db;
 USE hospital_db;
 
--- 1. Patients Table
+1. Patients Table
 CREATE TABLE patients (
     patient_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE patients (
     date_registered DATE DEFAULT CURRENT_DATE
 );
 
--- 2. Doctors Table
+2. Doctors Table
 CREATE TABLE doctors (
     doctor_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE doctors (
     email VARCHAR(255)
 );
 
--- 3. Appointments Table
+3. Appointments Table
 CREATE TABLE appointments (
     appointment_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE appointments (
     FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
 );
 
--- 4. Treatments Table
+4. Treatments Table
 CREATE TABLE treatments (
     treatment_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE treatments (
     FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
 );
 
--- 5. Rooms Table
+5. Rooms Table
 CREATE TABLE rooms (
     room_id INT AUTO_INCREMENT PRIMARY KEY,
     room_number VARCHAR(20),
@@ -55,7 +55,7 @@ CREATE TABLE rooms (
     is_available BOOLEAN DEFAULT TRUE
 );
 
--- 6. Admissions Table
+6. Admissions Table
 CREATE TABLE admissions (
     admission_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT NOT NULL,
